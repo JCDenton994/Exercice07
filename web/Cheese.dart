@@ -6,16 +6,17 @@ class Cheese {
 
   num x;
   num y;
-  num r;
 
-  Cheese(this.board, this.x, this.y, this.r) {
+  Cheese(this.board, this.x, this.y) {
     draw();
   }
 
   void draw() {
     board.ctx.beginPath();
     board.ctx.fillStyle = "#FFFF00";
-    board.ctx.arc(x, y, r, 0, PI*2, true);
+    board.ctx.moveTo(x, y);
+    board.ctx.lineTo(x+5,y-10);
+    board.ctx.lineTo(x+10,y);
     board.ctx.closePath();
     board.ctx.fill();
   }

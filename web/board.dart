@@ -34,7 +34,7 @@ Board(this.canvas){
 
 void init(){
   mouse = new Mouse(this, startmouseX, startmouseY, 10);
-  cheese = new Cheese(this, startcheeseX, startcheeseY, 5);
+  cheese = new Cheese(this, startcheeseX, startcheeseY);
   window.animationFrame.then(gameLoop);
 }
 
@@ -76,6 +76,7 @@ bool redraw() {
   if (mouse.x <= (cheese.x+10) && cheese.x <= (mouse.x+10) && mouse.y <= (cheese.y+10) && cheese.y <= (mouse.y+10)){
     window.alert('Yummy Yummy!!');
     return false;
+    
   }
   return true;
   
